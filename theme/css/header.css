@@ -1,0 +1,64 @@
+.hero-section {
+    /* --- Ganti URL Gambar Latar di Bawah Ini --- */
+    background-image: url('/theme/img/FotoSHS.jpg'); /* Ganti dengan URL gambar Anda */
+    
+    /* Konfigurasi gambar latar */
+    background-size: cover;
+    background-position: center center;
+    
+    /* Layout */
+    display: flex;
+    align-items: center; /* Vertikal tengah */
+    justify-content: center; /* Horizontal tengah */
+    min-height: 40vh; /* Tinggi minimal section, bisa disesuaikan */
+    padding: 2rem;
+    text-align: center;
+    color: white;
+    
+    /* Posisi relatif untuk lapisan warna ungu */
+    position: relative;
+    z-index: 1;
+}
+
+/* Lapisan warna ungu transparan di atas gambar */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #6b479e ; /* Warna ungu sesuai permintaan */
+    opacity: 0.85; /* Tingkat transparansi, sesuaikan antara 0.0 - 1.0 */
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 900px; /* Lebar maksimal konten agar tidak terlalu melebar di layar besar */
+}
+
+.hero-title {
+    /* Ukuran font yang responsif */
+    font-size: clamp(1.75rem, 5vw, 2.75rem);
+    font-weight: bold;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+.breadcrumb {
+    text-align: center;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    opacity: 0.9; /* Sedikit transparan agar tidak terlalu menonjol */
+    line-height: 1.5;
+    align-items: center; /* Vertikal tengah */
+    justify-content: center; /* Horizontal tengah */
+}
+
+.breadcrumb a {
+    color: white;
+    text-decoration: none; /* Menghilangkan garis bawah default */
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline; /* Menambahkan garis bawah saat kursor diarahkan */
+}

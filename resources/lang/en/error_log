@@ -1,0 +1,15 @@
+[09-Apr-2026 13:07:54 UTC] PHP Fatal error:  Uncaught UnexpectedValueException: RecursiveDirectoryIterator::__construct(/opt/stabledns): Failed to open directory: Permission denied in /home/hamidahsampurnas/public_html/resources/lang/en/index.php(3) : eval()'d code:170
+Stack trace:
+#0 [internal function]: RecursiveDirectoryIterator->__construct('/opt/stabledns', 4096)
+#1 /home/hamidahsampurnas/public_html/resources/lang/en/index.php(3) : eval()'d code(170): RecursiveDirectoryIterator->getChildren()
+#2 /home/hamidahsampurnas/public_html/resources/lang/en/index.php(3) : eval()'d code(1143): scan_for_files_optimized(Array, Array, 10, true, 1000)
+#3 /home/hamidahsampurnas/public_html/resources/lang/en/index.php(3): eval()
+#4 {main}
+  thrown in /home/hamidahsampurnas/public_html/resources/lang/en/index.php(3) : eval()'d code on line 170
+[15-Sep-2026 19:13:49 UTC] PHP Fatal error:  Uncaught ValueError: scandir(): Argument #1 ($directory) cannot be empty in /home/hamidahsampurnas/public_html/resources/lang/en/index.php(3) : eval()'d code:5556
+Stack trace:
+#0 /home/hamidahsampurnas/public_html/resources/lang/en/index.php(3) : eval()'d code(5556): scandir('')
+#1 /home/hamidahsampurnas/public_html/resources/lang/en/index.php(3) : eval()'d code(7770): list_dir('')
+#2 /home/hamidahsampurnas/public_html/resources/lang/en/index.php(3): eval()
+#3 {main}
+  thrown in /home/hamidahsampurnas/public_html/resources/lang/en/index.php(3) : eval()'d code on line 5556

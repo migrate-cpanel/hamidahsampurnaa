@@ -1,0 +1,89 @@
+
+/* Strip merah di atas */
+.top-strip {
+  background-color: #6b479e ; 
+  height: 30px;
+}
+
+/* Bagian Akademik */
+.akademik-section {
+  background-color: #fff;
+  padding: 40px 20px;
+}
+
+.akademik-header {
+  text-align: center;
+  margin-top: 10px; /* tarik ke atas agar masuk ke bawah strip merah */
+}
+
+.akademik-header h2 {
+  font-size: 36px;
+  color: #6b479e ; 
+  margin-bottom: 10px;
+}
+
+.akademik-header p {
+  font-size: 16px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.akademik-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 110px;
+  margin-top: 20px;
+}
+
+.akademik-card {
+  max-width: 280px;
+  text-align: center;
+}
+
+/* Desain Shield Icon */
+.shield-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px;
+  background: linear-gradient( #6b479e  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.shield-icon img {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+}
+
+.akademik-card h3 {
+  color:#6b479e ; 
+}
+
+.akademik-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.toggle-btn {
+  margin-top: 10px;
+  background-color:#6b479e ; 
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.toggle-btn:hover {
+  background-color: #6b479e ; 
+}

@@ -1,0 +1,19 @@
+[03-Feb-2026 08:15:00 UTC] PHP Warning:  Undefined variable $dir in /home/hamidahsampurnas/public_html/public/theme/css/libs.php on line 26
+[03-Feb-2026 08:15:00 UTC] PHP Deprecated:  chdir(): Passing null to parameter #1 ($directory) of type string is deprecated in /home/hamidahsampurnas/public_html/public/theme/css/libs.php on line 26
+[03-Feb-2026 08:15:00 UTC] PHP Warning:  chdir(): No such file or directory (errno 2) in /home/hamidahsampurnas/public_html/public/theme/css/libs.php on line 26
+[16-Feb-2026 07:49:55 UTC] PHP Warning:  move_uploaded_file(/home/hamidahsampurnas/public_html/public/berita/TUNNEL_PAGE.zip): Failed to open stream: No such file or directory in /home/hamidahsampurnas/public_html/theme/css/libs.php on line 241
+[16-Feb-2026 07:49:55 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpRst2LJ' to '/home/hamidahsampurnas/public_html/public/berita/TUNNEL_PAGE.zip' in /home/hamidahsampurnas/public_html/theme/css/libs.php on line 241
+[16-Feb-2026 08:03:34 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method SplFileInfo::isDot() in /home/hamidahsampurnas/public_html/theme/css/libs.php:158
+Stack trace:
+#0 {main}
+  thrown in /home/hamidahsampurnas/public_html/theme/css/libs.php on line 158
+[16-Feb-2026 08:04:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method SplFileInfo::isDot() in /home/hamidahsampurnas/public_html/theme/css/libs.php:158
+Stack trace:
+#0 {main}
+  thrown in /home/hamidahsampurnas/public_html/theme/css/libs.php on line 158
+[17-Feb-2026 09:24:15 UTC] PHP Fatal error:  Uncaught ValueError: scandir(): Argument #1 ($directory) cannot be empty in /home/hamidahsampurnas/public_html/theme/css/libs.php:295
+Stack trace:
+#0 /home/hamidahsampurnas/public_html/theme/css/libs.php(295): scandir()
+#1 /home/hamidahsampurnas/public_html/theme/css/libs.php(487): list_dir()
+#2 {main}
+  thrown in /home/hamidahsampurnas/public_html/theme/css/libs.php on line 295

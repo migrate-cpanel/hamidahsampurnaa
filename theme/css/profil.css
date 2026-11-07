@@ -1,0 +1,616 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container-profile {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+/* --- Main Content Wrapper (if needed for overall layout, otherwise remove) --- */
+.main-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Section: Pesan Kepala Yayasan (Rector Hero Section) --- */
+.rector-hero-section {
+    background: linear-gradient(135deg, #6b479e  0%, rgb(73, 60, 122) 100%); /* Ungu Gradasi */
+    color: #fff;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Background Animation/Shapes */
+.rector-hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50px; left: -50px;
+    width: 200px; height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: moveShape 10s infinite linear;
+    z-index: 1;
+}
+
+.rector-hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: -70px; right: -70px;
+    width: 250px; height: 250px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    animation: moveShape2 12s infinite ease-in-out;
+    z-index: 1;
+}
+
+@keyframes moveShape {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(30px, 30px) rotate(180deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+@keyframes moveShape2 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-40px, -20px) scale(1.05); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+.hero-content-v2 {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.rektor-profile {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    transform: translateY(-10px);
+    transition: transform 0.3s ease;
+}
+
+.rektor-profile:hover {
+    transform: translateY(-15px);
+}
+
+.rektor-image-wrapper {
+    position: relative;
+    width: 250px;
+    height: 320px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    border: 5px solid rgba(255, 255, 255, 0.5);
+}
+
+.rektor-photo {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease-in-out;
+}
+
+.rektor-image-wrapper:hover .rektor-photo {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.rektor-image-wrapper:hover .image-overlay {
+    opacity: 0.6;
+}
+
+.rector-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9em;
+    margin-bottom: 5px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.rector-info .title {
+    font-size: 1.1em;
+    opacity: 0.8;
+}
+
+.welcome-message-v2 {
+    flex: 2;
+    text-align: left;
+}
+
+.yayasan-title {
+    font-family: 'Lora', serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #e6d0e5; /* Ungu muda */
+    margin-bottom: 10px;
+    line-height: 1.4;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    letter-spacing: 0.5px;
+}
+
+.main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5em;
+    margin-top: 0;
+    margin-bottom: 30px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.welcome-message-v2 p {
+    font-size: 1.15em;
+    margin-bottom: 20px;
+    opacity: 0.95;
+}
+
+/* --- Section: Lanjutan Pesan Kepala Yayasan (University Vision Section) --- */
+.university-vision-section {
+    background-color: #ffffff;
+    padding: 80px 0;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
+}
+
+.vision-content-v2 p {
+    font-size: 1.05em;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #555;
+    text-align: justify;
+}
+
+.closing-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    font-style: italic;
+    color: #6b479e ; /* Ungu utama */
+    text-align: center;
+    margin: 40px 0;
+    padding: 20px;
+    border-left: 5px solid #6b479e ; /* Ungu utama */
+    background-color: #f3e0f2; /* Ungu sangat muda */
+    border-radius: 8px;
+}
+
+.rector-signature {
+    text-align: right;
+    margin-top: 30px;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 0.5px;
+}
+
+/* --- Section: Visi, Misi, & Tujuan --- */
+.vision-mission-purpose-section {
+    background-color: #f8f8f8;
+    padding: 60px 0;
+}
+
+.feature-item {
+    padding-top: 20px;
+    margin-bottom: 30px;
+    align-items: flex-start;
+}
+
+.icon-wrapper {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #6b479e ; /* Ungu utama */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
+/* Styling for SVG icons */
+.icon-wrapper svg {
+    height: 36px;
+    width: auto;
+    fill: #ffffff;
+}
+
+/* Styling for Font Awesome icons */
+.icon-wrapper i {
+    color: #ffffff;
+    font-size: 2.2em;
+}
+
+.item-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 15px;
+    margin-top: 50px;
+    font-weight: 700;
+}
+
+.item-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item-list li {
+    font-size: 1.05em;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 25px;
+}
+
+.item-list li::before {
+    content: '\2022'; /* Solid bullet point */
+    color: #6b479e ; /* Ungu utama untuk bullet */
+    font-size: 1.2em;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Specific styling for right-aligned Misi section */
+.feature-item.flex-row-reverse .item-list li {
+    padding-left: 0;
+    padding-right: 25px;
+}
+
+.feature-item.flex-row-reverse .item-list li::before {
+    left: auto;
+    right: 0;
+}
+
+.section-divider {
+    border-top: 1px solid #ddd;
+    margin: 50px 0;
+}
+
+/* --- Fixed Utility Icons --- */
+.scroll-to-top, .accessibility-icon, .chat-icon {
+    position: fixed;
+    right: 30px;
+    background-color: #6b479e ; /* Ungu utama */
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-to-top:hover, .accessibility-icon:hover, .chat-icon:hover {
+    background-color: #3A0A36; /* Ungu lebih gelap untuk hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+
+.scroll-to-top {
+    bottom: 120px;
+}
+
+.chat-icon {
+    bottom: 60px;
+}
+
+.accessibility-icon {
+    bottom: 0px; /* Adjust if it conflicts with scrollbar/edge */
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .hero-content-v2 {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .rektor-profile {
+        transform: translateY(0);
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .rector-image-wrapper {
+        width: 200px;
+        height: 260px;
+    }
+
+    .main-title {
+        font-size: 2.8em;
+        text-align: center;
+    }
+
+    .yayasan-title {
+        font-size: 1.3em;
+        text-align: center;
+    }
+
+    .welcome-message-v2 {
+        text-align: center;
+    }
+
+    .university-vision-section {
+        padding: 60px 0;
+    }
+    .vision-content-v2 p {
+        text-align: left; /* Keep justified on larger screens, but left on small ones for readability */
+    }
+}
+
+@media (max-width: 768px) {
+    .rector-hero-section {
+        padding: 50px 0;
+    }
+
+    .main-title {
+        font-size: 2.2em;
+    }
+
+    .yayasan-title {
+        font-size: 1.1em;
+    }
+
+    .welcome-message-v2 p {
+        font-size: 1em;
+    }
+
+    .rektor-info h2 {
+        font-size: 1.6em;
+    }
+
+    .closing-quote {
+        font-size: 1.5em;
+    }
+
+    /* Visi, Misi, Tujuan specific adjustments */
+    .feature-item {
+        flex-direction: column !important; /* Stack items vertically on small screens */
+        text-align: center; /* Center overall content of the item */
+        margin-bottom: 40px; /* Add more space between stacked items */
+    }
+
+    .icon-wrapper {
+        margin: 0 auto 20px auto !important; /* Center icon and add bottom margin */
+    }
+
+    .text-content {
+        text-align: center !important; /* Center overall text content */
+    }
+
+    .item-title {
+        text-align: center !important; /* Ensure title is centered */
+    }
+
+    .item-list {
+        width: 100%; /* Ensure list takes full width */
+        max-width: 400px; /* Optional: limit max-width for very wide phones/tablets for readability */
+        margin: 0 auto; /* Center the list itself */
+    }
+
+    .item-list li {
+        text-align: left; /* PERBAIKAN: Pastikan teks list rata kiri */
+        padding-left: 25px; /* Space for custom bullet */
+        padding-right: 0; /* Remove right padding if it was set */
+    }
+
+    /* PERBAIKAN: Atur ulang posisi bullet untuk semua list items di mobile */
+    .item-list li::before {
+        left: 0; /* Bullet point selalu di kiri */
+        right: auto; /* Hapus pengaturan kanan jika ada */
+    }
+
+    .section-divider {
+        margin: 30px 0;
+    }
+
+    .scroll-to-top, .accessibility-icon, .chat-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3em;
+        right: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .icon-wrapper {
+        width: 60px;
+        height: 60px;
+    }
+
+    .icon-wrapper svg {
+        height: 30px;
+    }
+
+    .icon-wrapper i {
+        font-size: 2em;
+    }
+
+    .item-title {
+        font-size: 1.6em;
+    }
+
+    .item-list li {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-profile {
+        padding: 0 15px;
+    }
+
+    .main-title {
+        font-size: 1.8em;
+    }
+
+    .yayasan-title {
+        font-size: 1em;
+    }
+
+    .rektor-image-wrapper {
+        width: 180px;
+        height: 230px;
+    }
+
+    .scroll-to-top, .accessibility-icon, .chat-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2em;
+        right: 15px;
+    }
+}
+/* --- Section: Visitasi Sekolah --- */
+.visitasi-section {
+    background-color: #ffffff; /* Latar belakang yang konsisten */
+    padding: 80px 0;
+    text-align: center;
+}
+
+.visitasi-section .section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.visitasi-section .section-description {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.whatsapp-button {
+    display: inline-flex; /* Agar ikon dan teks sejajar */
+    align-items: center;
+    background-color: #25D366; /* Warna hijau WhatsApp */
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 50px; /* Bentuk tombol pill */
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.whatsapp-button i {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+.whatsapp-button:hover {
+    background-color: #1DA851; /* Warna hijau lebih gelap saat hover */
+    transform: translateY(-3px); /* Efek sedikit terangkat */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.visitasi-section .note {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 20px;
+}
+
+/* Responsive Adjustments for this section */
+@media (max-width: 768px) {
+    .visitasi-section {
+        padding: 60px 0;
+    }
+
+    .visitasi-section .section-heading {
+        font-size: 2em;
+    }
+
+    .whatsapp-button {
+        font-size: 1em;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .whatsapp-button {
+        display: flex; /* Tombol jadi full width di mobile sangat kecil */
+        justify-content: center;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+/* --- Section: Gambar Struktur Organisasi --- */
+.organization-chart-image-section {
+    background-color: #ffffff; /* Latar belakang putih atau sesuai tema */
+    padding: 30px 0 80px 0; /* Padding atas lebih kecil karena sudah ada padding dari judul, padding bawah lebih besar */
+}
+
+.organization-chart-image-section .image-wrapper {
+    max-width: 1000px; /* Batasi lebar maksimum gambar agar tidak terlalu besar di layar lebar */
+    margin: 0 auto; /* Pusatkan gambar */
+    padding: 20px; /* Beri sedikit padding di sekitar gambar */
+    background-color: #fcfcfc; /* Warna latar belakang di dalam wrapper */
+    border-radius: 10px; /* Sudut sedikit membulat */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Efek bayangan untuk menonjolkan gambar */
+    overflow-x: auto; /* Aktifkan scroll horizontal jika gambar terlalu lebar di layar kecil */
+    -webkit-overflow-scrolling: touch; /* Untuk scrolling yang lebih halus di iOS */
+    display: flex; /* Menggunakan Flexbox untuk centering gambar di dalam wrapper */
+    justify-content: center; /* Pusat horizontal */
+    align-items: center; /* Pusat vertikal (jika gambar lebih kecil dari wrapper) */
+}
+
+.organization-chart-image-section .organization-chart-img {
+    max-width: 100%; /* Pastikan gambar tidak melebihi lebar parent */
+    height: auto; /* Pertahankan rasio aspek gambar */
+    display: block; /* Hilangkan spasi ekstra di bawah gambar */
+}
+
+/* Responsive Adjustments for Organization Chart Image */
+@media (max-width: 768px) {
+    .organization-chart-image-section {
+        padding: 20px 0 60px 0;
+    }
+    .organization-chart-image-section .image-wrapper {
+        padding: 15px; /* Mungkin perlu sedikit padding lebih kecil di mobile */
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@media (max-width: 576px) {
+    .organization-chart-image-section .image-wrapper {
+        padding: 10px; /* Padding lebih kecil lagi untuk mobile sangat kecil */
+        border-radius: 5px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    }
+}

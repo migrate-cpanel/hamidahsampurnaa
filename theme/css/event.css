@@ -1,0 +1,225 @@
+      body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+      
+      /* Kontainer utama untuk seluruh bagian */
+        .school-life-section {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .school-life-section .main-title {
+            font-size: 2.5em;
+            color: #6b479e ;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+
+        .school-life-section .intro-text {
+            font-size: 1.1em;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 2px auto;
+            line-height: 1.6;
+        }
+       .school-life-section {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .features-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        .feature-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            /* overflow: hidden;  <-- INI DIHAPUS, INILAH PENYEBAB MASALAHNYA */
+            flex-basis: 320px;
+            display: flex;
+            flex-direction: column;
+            max-width: 360px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        /*.feature-card:hover {*/
+        /*    transform: translateY(-5px);*/
+        /*    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);*/
+        /*}*/
+
+        /* --- PERBAIKAN DI SINI --- */
+        .feature-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            /* Beri lengkungan hanya pada sudut atas gambar */
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+        /* ------------------------- */
+
+        .card-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .feature-card .card-title {
+            font-size: 1.4em;
+            color: #6b479e ;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 600;
+            
+            
+           display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3; /* Batasi judul menjadi maksimal 3 baris */
+            overflow: hidden;
+        }
+        
+        .description-wrapper {
+            position: relative;
+            max-height: 80px;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        
+        .feature-card.is-expanded .description-wrapper {
+            max-height: 500px;
+        }
+        
+        .card-description {
+            font-size: 0.95em;
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+            
+            /* === INI KODE AJAIBNYA === */
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3; /* Tentukan maksimal 3 baris */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* Atur tinggi minimal agar layout stabil sebelum tombol */
+            min-height: calc(1.6 * 0.95em * 3); /* line-height * font-size * jumlah baris */
+            
+        }
+        
+        .btn-read-more {
+            background-color: #6b479e ;
+            color: #ffffff;
+            padding: 10px 10px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px; /* <-- TAMBAHKAN ATAU UBAH BARIS INI */
+            transition: background-color 0.3s ease;
+            display: inline-block; /* Tambahkan ini agar margin bekerja dengan baik */
+            
+        }
+
+        .btn-read-more:hover {
+            background-color: rgba(118, 99, 187, 0.75);
+        }
+
+        @media (max-width: 768px) {
+            .school-life-section .main-title { font-size: 2em; }
+            .features-container { flex-direction: column; align-items: center; }
+            .feature-card { width: 90%; max-width: 400px; }
+        }
+
+        /* --- [BARU] CSS untuk Wadah Gambar & Overlay Tanggal --- */
+
+/* Jadikan tautan sebagai wadah untuk positioning */
+.card-image-link {
+    position: relative;
+    display: block; /* Pastikan elemen <a> berperilaku seperti block */
+}
+
+/* Wadah utama untuk overlay tanggal */
+.date-overlay {
+    position: absolute;
+    top: 15px;      /* Jarak dari atas gambar */
+    left: -5px;     /* Sedikit keluar ke kiri agar efeknya lebih menarik */
+    z-index: 10;    /* Pastikan overlay berada di atas gambar */
+    display: flex;
+    flex-direction: column; /* Susun tanggal dan tahun secara vertikal */
+    align-items: flex-start;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan agar lebih menonjol */
+}
+
+/* Styling untuk bagian tanggal dan bulan (kotak merah) */
+.date-overlay .date-day-month {
+    background-color: #6b479e ; /* Warna merah tua, sesuaikan jika perlu */
+    color: #ffffff;
+    padding: 6px 15px;
+    font-size: 1.1em;
+    font-weight: 700;
+    border-radius: 0 4px 0 0; /* Lengkungan di sudut kanan atas */
+    min-width: 80px; /* Lebar minimum agar terlihat seimbang */
+    text-align: center;
+}
+
+/* Styling untuk bagian tahun (kotak abu-abu) */
+.date-overlay .date-year {
+    background-color: #f0f0f0; /* Warna abu-abu terang */
+    color: #333333;
+    padding: 4px 15px;
+    font-size: 0.9em;
+    font-weight: 600;
+    border-radius: 0 0 4px 0; /* Lengkungan di sudut kanan bawah */
+    min-width: 80px; /* Samakan lebar minimum */
+    text-align: center;
+}
+
+.pagination-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    max-width: 200px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+#pageInfo {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.arrow-btn {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.arrow-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.arrow-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}

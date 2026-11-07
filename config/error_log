@@ -1,0 +1,12 @@
+[19-Mar-2026 18:26:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/hamidahsampurnas/public_html/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/hamidahsampurnas/public_html/config/database.php on line 18
+[19-Mar-2026 18:48:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/hamidahsampurnas/public_html/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/hamidahsampurnas/public_html/config/database.php on line 18
+[27-May-2026 05:31:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/hamidahsampurnas/public_html/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/hamidahsampurnas/public_html/config/database.php on line 18

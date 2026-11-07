@@ -1,0 +1,559 @@
+/* Pastikan Anda sudah menyertakan Google Fonts di <head> HTML Anda untuk font ini */
+/* <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> */
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* CSS untuk bagian intro galeri dengan gradasi ungu dan desain baru */
+.gallery-intro-container-v3 {
+    /* Gradasi ungu yang lebih modern dan lembut */
+    background: linear-gradient(135deg, #6b479e  0%, #a581d8  100%); /* Arah dari kiri bawah ke kanan atas */
+    padding: 90px 20px; /* Padding yang lebih besar untuk kesan premium */
+    text-align: center;
+    color: #fff; /* Warna teks default putih untuk kontras dengan gradasi */
+    overflow: hidden; /* Penting jika ada elemen yang keluar dari flow */
+    position: relative; /* Untuk pseudo-elemen jika diperlukan efek tambahan */
+}
+
+/* Opsional: Efek background halus (bisa diaktifkan/dinonaktifkan) */
+/* .gallery-intro-container-v3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('' ); /* Pola titik transparan */
+   /* background-size: 60px; /* Ukuran pola */
+   /* opacity: 0.05; /* Tingkat transparansi pola */
+   /* z-index: -1; /* Pastikan di belakang konten */
+/*} */ 
+
+
+.gallery-intro-content-v3 {
+    max-width: 900px; /* Lebar konten agar tidak terlalu lebar di layar besar */
+    margin: 0 auto;
+    position: relative; /* Penting untuk z-index agar konten di atas background pattern */
+    z-index: 1;
+}
+
+.gallery-intro-content-v3 h1 {
+    font-family: 'Montserrat', sans-serif; /* Font yang kuat dan modern */
+    font-size: 3.5em; /* Ukuran judul yang lebih besar */
+    color: #F3E5F5; /* Warna teks judul yang lebih terang (ungu muda) */
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px; /* Ruang untuk garis bawah */
+    line-height: 1.2;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Bayangan teks yang lebih kuat */
+    letter-spacing: -0.5px; /* Sedikit penyesuaian jarak antar huruf */
+}
+
+.gallery-intro-content-v3 h1::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 120px; /* Garis bawah yang lebih panjang */
+    height: 6px; /* Garis bawah yang lebih tebal */
+    background: linear-gradient(90deg, #ffffff, #a27bd7); /* Gradasi pada garis bawah */
+    border-radius: 3px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* Bayangan yang lebih kuat untuk garis */
+}
+
+.gallery-intro-content-v3 p {
+    font-family: 'Open Sans', sans-serif; /* Font yang bersih dan mudah dibaca */
+    font-size: 1.3em; /* Ukuran paragraf yang lebih besar */
+    color: #F8F8F8; /* Warna teks paragraf yang sangat terang */
+    max-width: 800px; /* Lebar maksimal paragraf */
+    margin: 0 auto;
+    line-height: 1.8;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* Bayangan teks paragraf */
+}
+
+/* Responsif */
+@media (max-width: 992px) {
+    .gallery-intro-content-v3 h1 {
+        font-size: 3em;
+    }
+    .gallery-intro-content-v3 p {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-intro-container-v3 {
+        padding: 70px 15px;
+    }
+    .gallery-intro-content-v3 h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+    .gallery-intro-content-v3 h1::after {
+        width: 100px;
+        height: 5px;
+    }
+    .gallery-intro-content-v3 p {
+        font-size: 1.1em;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-intro-container-v3 {
+        padding: 50px 10px;
+    }
+    .gallery-intro-content-v3 h1 {
+        font-size: 2em;
+        line-height: 1.3;
+    }
+    .gallery-intro-content-v3 h1::after {
+        width: 80px;
+        height: 4px;
+    }
+    .gallery-intro-content-v3 p {
+        font-size: 1em;
+    }
+}
+
+/* CSS untuk bagian kategori galeri */
+.gallery-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    align-items: start; /* <-- PERBAIKAN PENTING: Mencegah kartu memanjang secara vertikal */
+}
+
+.category-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.category-card:hover {
+    /* transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12); */
+}
+
+.category-card h2 {
+    font-size: 1.6em;
+    color: #6b479e ;
+    margin-bottom: 8px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.category-card h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #6b479e ;
+    border-radius: 1.5px;
+}
+
+.category-card p {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* KOREKSI CSS untuk galeri gambar di dalam kartu */
+.gallery-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+    padding-bottom: 0;
+    justify-content: center;
+    align-items: start;
+    transition: max-height 0.5s ease-out;
+    max-height: fit-content;
+    overflow: hidden;
+}
+
+.gallery-images.limited-view {
+    /* Tinggi untuk menampilkan hanya 1 gambar. Ini akan lebih besar dari 100px. */
+    max-height: 250px; /* Cukup untuk satu gambar yang lebih besar */
+    overflow: hidden;
+    /* Tambahkan pengaturan grid khusus untuk mode limited-view */
+    grid-template-columns: 1fr; /* Untuk memastikan 1 gambar mengambil 1 kolom penuh di mode terbatas */
+    justify-items: center; /* Pusatkan gambar secara horizontal */
+}
+
+.gallery-images.limited-view .gallery-item:nth-child(n + 2) {
+    display: none;
+}
+
+/* --- PERBAIKAN untuk tampilan gambar itu sendiri --- */
+.gallery-item {
+    display: flex; /* Gunakan flexbox pada wrapper link */
+    align-items: center; /* Tengahkan konten (termasuk alt text jika gambar rusak) */
+    justify-content: center;
+    height: 180px; /* <--- PERBAIKAN: Tinggi yang lebih besar untuk gambar utama */
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    text-align: center;
+    font-size: 0.8em;
+    color: #7f8c8d;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+/* Kembali ke ukuran asli saat tidak di mode limited-view atau saat ditampilkan semua */
+.gallery-images:not(.limited-view) .gallery-item {
+    height: 100px; /* Kembali ke tinggi 100px untuk gambar-gambar lainnya */
+}
+
+
+.gallery-item img {
+    width: 100%;
+    height: 100%; /* Gambar akan mengisi 100% tinggi parent (.gallery-item) */
+    object-fit: cover; /* Tetap cover agar gambar mengisi penuh */
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+    line-height: 0;
+    font-size: 0;
+}
+
+.gallery-item img:not([src=""]):not([src^="data:"]) {
+    font-size: initial;
+    line-height: initial;
+}
+
+.gallery-images img:hover {
+    transform: scale(1.05);
+}
+
+/* --- Gaya untuk Tombol "Lihat Semua Gambar" (sama seperti sebelumnya) --- */
+.show-more-images-button {
+    background-color: #6b479e ;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.show-more-images-button:hover {
+    background-color: rgba(92, 75, 153, 0.75);
+    transform: translateY(-2px);
+}
+
+/* Penyesuaian responsif */
+@media (max-width: 768px) {
+    .gallery-intro h1 {
+        font-size: 2em;
+    }
+
+    .gallery-intro p {
+        font-size: 1em;
+    }
+
+    .gallery-categories {
+        grid-template-columns: 1fr;
+        padding: 30px 15px;
+    }
+
+    .category-card {
+        padding: 25px;
+    }
+
+    .gallery-images {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
+
+    .gallery-images img {
+        /* height: 80px; */
+        width: 80px;
+    }
+
+    .gallery-images.limited-view {
+        /* Tinggi untuk 1 gambar pada layar kecil */
+        max-height: 180px; /* Sesuaikan untuk 1 gambar yang lebih besar di mobile */
+    }
+
+    .gallery-images.limited-view .gallery-item:nth-child(1) {
+        height: 150px; /* Ukuran gambar utama di mobile */
+    }
+}
+
+/* --- Customisasi Tampilan Link Kategori (sama seperti sebelumnya) --- */
+.category-card h2 .category-link {
+    color: #6b479e ;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.category-card h2 .category-link:hover {
+    color: rgba(92, 75, 153, 0.75);
+}
+
+/* --- Modal Styles (sama seperti sebelumnya) --- */
+.modal {
+    display: none;
+    padding-top: 70px;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    /* backdrop-filter: blur(5px); */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.modal-title {
+    font-size: 1.8em;
+    color: #6b479e ;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* --- Slider Styles (sama seperti sebelumnya) --- */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:  linear-gradient(to bottom, rgba(176, 132, 204, 0.7), rgb(107, 71, 158));
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.slider-image-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modalImage {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 70vh;
+    display: block;
+    object-fit: contain;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.prev-button, .next-button {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    transform: translateY(-50%);
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    transition: 0.6s ease;
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: rgba(92, 75, 153, 0.75);
+}
+
+.prev-button {
+    left: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.next-button {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev-button:hover, .next-button:hover {
+    background-color: rgba(130, 114, 187, 0.75);
+}
+
+.image-counter {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 0.9em;
+    background-color: rgba(92, 75, 153, 0.75);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Animasi Fade-in */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Responsif untuk modal */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 15px;
+        max-width: 95%;
+        max-height: 95%;
+    }
+    .close-button {
+        font-size: 30px;
+        top: 10px;
+        right: 15px;
+    }
+    .modal-title {
+        font-size: 1.5em;
+    }
+    .prev-button, .next-button {
+        padding: 10px;
+        font-size: 20px;
+    }
+    #modalImage {
+        max-height: 60vh;
+    }
+}
+
+/* 1. Styling untuk Deskripsi yang Dipotong */
+.kegiatan-description.truncated {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Tampilkan maksimal 3 baris */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5; /* Sesuaikan line-height jika perlu */
+    max-height: calc(1.5em * 3); /* (line-height * line-clamp) */
+}
+
+/* 2. Wrapper untuk Paginasi Gambar */
+.image-pagination-container {
+    position: relative;
+    margin-top: 20px;
+}
+
+/* 3. Tombol Navigasi Paginasi (Next/Prev) */
+.page-nav-button {
+    position: absolute;
+    /* Vertically center the button relative to the container */
+    top: 50%; 
+    transform: translateY(-50%);
+    background-color: rgba(107, 71, 158, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 100; /* Sembunyikan tombol secara default */
+}
+
+.page-nav-button:hover {
+    background-color: rgba(107, 71, 158, 1);
+}
+
+.page-nav-button.prev-page {
+    left: -20px; /* Sedikit keluar dari grid */
+}
+
+.page-nav-button.next-page {
+    right: -20px; /* Sedikit keluar dari grid */
+}
+
+/* Styling saat tombol dinonaktifkan */
+.page-nav-button:disabled {
+    background-color: rgba(189, 189, 189, 0.5);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* 4. Counter Halaman (misal: 1 / 3) */
+.page-counter {
+    text-align: center;
+    margin-top: 15px;
+    color: #555;
+    font-size: 0.9em;
+}
+
+/* CSS untuk preview dan menyembunyikan galeri */
+.gallery-wrapper {
+    margin-top: 20px;
+}
+.gallery-preview .gallery-item {
+    height: 180px; /* Ukuran gambar preview yang lebih besar */
+}
+
+/* Class untuk menyembunyikan galeri paginasi */
+.gallery-hidden {
+    display: none;
+}

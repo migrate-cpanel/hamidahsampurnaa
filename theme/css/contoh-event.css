@@ -1,0 +1,356 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.innovation-wrapper {
+    max-width: 1200px; /* Lebar maksimum komponen */
+    margin: auto;
+    padding: 20px;
+}
+
+.innovation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Spacing between items */
+    padding: 20px 0;
+}
+
+.innovation-grid .card-link {
+    display: none;
+}
+
+a.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.innovation-item {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.innovation-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.innovation-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.innovation-item h3, .innovation-item p {
+    margin: 15px;
+}
+
+.innovation-item h3 {
+    color: #6b479e ;
+    font-size: 1.2em;
+}
+
+.innovation-item p {
+    color: #333;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+.pagination-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    max-width: 200px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+#pageInfo {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.arrow-btn {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.arrow-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.arrow-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* === PERBAIKAN UNTUK MOBILE KECIL === */
+@media (max-width: 360px) {
+    .innovation-wrapper {
+        /* Kurangi padding di sisi kiri-kanan agar konten lebih lega */
+        padding: 20px 10px;
+    }
+
+    .innovation-grid {
+        /* Ubah grid agar selalu 1 kolom penuh di layar kecil */
+        grid-template-columns: 1fr;
+    }
+
+    .innovation-item h3 {
+        /* Sedikit kecilkan ukuran font judul agar tidak terlalu besar */
+        font-size: 1.1em;
+    }
+}
+
+/* Kontainer utama untuk seluruh bagian */
+        .school-life-section {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .school-life-section .main-title {
+            font-size: 2.5em;
+            color: #6b479e ;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .school-life-section-1 {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .school-life-section-1 .main-title-1 {
+            font-size: 2.5em;
+            color: #6b479e ;
+            font-weight: 700;
+            margin-bottom: 5px;
+            padding-bottom: 5px;
+        }
+
+        .school-life-section .intro-text {
+            font-size: 1.1em;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 2px auto;
+            line-height: 1.6;
+        }
+
+
+        /* Import Font (opsional, bisa diganti) */
+
+
+.article-container {
+    max-width: 800px; /* Sedikit lebih lebar untuk konten */
+    margin: 40px auto;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+
+}
+
+/* === Pengaturan Gambar & Overlay === */
+.image-wrapper, .carousel-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.shs-logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 80px; /* Sesuaikan ukuran logo */
+    background-color: rgb(255, 255, 255);
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.date-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: #6b479e ; /* Warna ungu sesuai permintaan */
+    color: #ffffff;
+    padding: 10px 15px;
+    text-align: center;
+    line-height: 1.2;
+    border-radius: 4px;
+}
+
+/* .date-overlay .day-month {
+    display: block;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.date-overlay .year {
+    display: block;
+    font-size: 0.8em;
+} */
+
+.date-overlay .day-month {
+    display: block;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.date-overlay .year {
+    display: block;
+    font-size: 1.1em;
+}
+
+/* === Pengaturan Konten Artikel === */
+.content-wrapper {
+    padding: 25px 30px;
+    width: 100%; /* Pastikan ia mengisi .article-container */
+    max-width: 100%;
+    box-sizing: border-box; /* Penting agar padding tidak menambah lebar */
+}
+
+.category-tag {
+    display: inline-block;
+    font-size: 0.9em;
+    font-weight: 700;
+    color: #6b479e ; /* Warna ungu */
+    border-bottom: 2px solid #6b479e ; /* Warna ungu */
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+/* Atur ulang agar teks di dalam wrapper tidak memiliki margin/padding aneh */
+.content-wrapper p, 
+.content-wrapper div {
+    max-width: 100%; /* Pastikan paragraf tidak lebih lebar dari wrapper */
+    text-align: left;
+    word-wrap: break-word; /* Mencegah teks meluber keluar */
+}
+
+/* Paragraf pertama sedikit lebih besar */
+/* .content-wrapper p:first-of-type {
+    font-size: 1.1em; 
+} */
+
+.content-wrapper p strong {
+    color: #111;
+}
+
+.content-wrapper p em {
+    color: #555;
+    font-style: italic;
+}
+
+.credits {
+    font-size: 0.9em !important;
+    color: #666;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 15px;
+    margin-top: 20px;
+    text-align: left !important;
+}
+
+/* Perbaikan untuk tampilan tablet ke atas */
+@media (min-width: 768px) {
+    .content-wrapper {
+        padding: 35px 50px; /* Beri padding lebih di layar besar */
+    }
+}
+
+@media (max-width: 820px) {
+    
+    .article-container {
+        /* Ini adalah perbaikan utamanya.
+           Memberi jarak 20px atas-bawah dan 15px kiri-kanan
+           agar card tidak lagi menempel di tepi layar. */
+        margin: 20px 15px;
+        
+        /* Menghapus radius dan shadow di layar kecil agar terlihat
+           lebih bersih dan menyatu dengan halaman. */
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .content-wrapper {
+        /* Sedikit mengurangi jarak di dalam konten agar lebih pas */
+        padding: 25px 15px;
+    }
+
+    .date-overlay {
+        /* Menyesuaikan ukuran dan posisi tanggal */
+        bottom: 15px;
+        left: 15px;
+        padding: 8px 12px;
+    }
+
+    .date-overlay .day-month {
+        font-size: 1.2em;
+    }
+
+    .date-overlay .year {
+        font-size: 0.8em;
+    }
+
+    /* .date-overlay .day-month {
+        font-size: 1.5em;
+    }
+
+    .date-overlay .year {
+        font-size: 0.9em;
+    } */
+}
+
+/* === KODE RAPI UNTUK EVENT INFO === */
+.event-info {
+    /* Padding dan background sudah tidak perlu, karena mengikuti parent (.content-wrapper) */
+    /* Membuat garis pemisah dengan konten di atasnya */
+    border-top: 1px solid #e0e0e0; 
+    margin-top: 25px;
+    padding-top: 25px;
+}
+
+.event-info h2 {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.event-info .info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.event-info .info-item i {
+    color: #6b479e; /* Warna ungu untuk ikon */
+    margin-right: 15px; /* Jarak antara ikon dan teks */
+    width: 20px;
+    text-align: center;
+}

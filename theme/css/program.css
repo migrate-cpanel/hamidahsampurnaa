@@ -1,0 +1,228 @@
+/* ================== PENGATURAN DASAR & FONT ================== */
+ :root {
+     --primary-color: #6b479e; /* Ungu Muda */
+     --secondary-color: #a88ed1; /* Ungu Muda Lebih Terang */
+     --background-color: #f4f7f9; /* Abu-abu sangat muda */
+     --text-color: #333333;
+     --card-bg: #FFFFFF;
+     --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+     --border-radius: 12px;
+ }
+
+ body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+ /* ================== STRUKTUR UTAMA ================== */
+ .school-profile {
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 40px 20px;
+ }
+
+ .content-section {
+     margin-bottom: 60px;
+ }
+
+ .section-title {
+     font-size: 2.5rem;
+     font-weight: 700;
+     color: var(--primary-color);
+     text-align: center;
+     margin-bottom: 15px;
+     position: relative;
+ }
+
+ /* Garis bawah dekoratif untuk judul */
+ .section-title::after {
+     content: '';
+     display: block;
+     width: 80px;
+     height: 4px;
+     background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+     margin: 10px auto 0;
+     border-radius: 2px;
+ }
+
+ .section-intro {
+     text-align: center;
+     max-width: 800px;
+     margin: 0 auto 40px;
+     color: #555;
+     font-size: 1.1rem;
+ }
+
+
+ /* ================== BAGIAN PROGRAM ================== */
+ .subsection-title {
+     font-size: 1.8rem;
+     font-weight: 600;
+     color: var(--primary-color);
+     /* Menghapus border kiri yang lama */
+     padding-left: 0;
+     margin-bottom: 10px;
+     margin-top: 40px; /* Jarak antar level (PG/TK & SD/SMP) */
+     position: relative;
+     text-align: center; /* Tengahkan judul PG-TK dan SD-SMP */
+     padding-bottom: 5px;
+ }
+
+ .subsection-title::after {
+     content: '';
+     display: block;
+     width: 60px;
+     height: 3px;
+     background: linear-gradient(to bottom, rgba(176, 132, 204, 0.7), rgba(107, 71, 158, 0.75));
+     margin: 5px auto 0;
+     border-radius: 2px;
+ }
+
+ /* Grid untuk menampung card */
+ .card-grid {
+     display: grid;
+     /* Membuat kolom yang responsif secara otomatis */
+     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+     gap: 25px;
+ }
+
+ /* Desain Kartu (Card) */
+ .card {
+     background-color: var(--card-bg);
+     border-radius: var(--border-radius);
+     padding: 25px;
+     box-shadow: var(--shadow);
+     border-top: 4px solid rgba(92, 75, 153, 0.75);
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ /* .card:hover {
+     transform: translateY(-8px);
+     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+ } */
+
+ .card h4 {
+     font-size: 1.2rem;
+     font-weight: 600;
+     color: rgba(92, 75, 153, 0.75);
+     margin-bottom: 10px;
+ }
+
+ .card p {
+     font-size: 0.95rem;
+     color: #444;
+ }
+
+ /* ================== BAGIAN KURIKULUM ================== */
+ .curriculum-list {
+     display: flex;
+     flex-direction: column;
+     gap: 30px;
+ }
+
+ .curriculum-item {
+     background: var(--card-bg);
+     padding: 30px;
+     border-radius: var(--border-radius);
+     box-shadow: var(--shadow);
+     border-left: 5px solid var(--primary-color);
+ }
+
+ .curriculum-item h3 {
+     font-size: 1.5rem;
+     color: var(--primary-color);
+     margin-bottom: 10px;
+ }
+
+ .curriculum-item ul {
+     list-style-type: '✔  '; /* Custom bullet */
+     padding-left: 20px;
+     margin-top: 15px;
+ }
+
+ .curriculum-item li {
+     margin-bottom: 8px;
+     font-size: 1rem;
+     color: #444;
+ }
+
+
+ /* ================== RESPONSIVE DESIGN ================== */
+ @media (max-width: 768px) {
+     .section-title {
+         font-size: 2rem;
+     }
+
+     .section-intro {
+         font-size: 1rem;
+         padding: 0 10px;
+     }
+
+     .school-profile {
+         padding: 20px 15px;
+     }
+
+     .subsection-title {
+         font-size: 1.5rem;
+     }
+ }
+
+ /* ================== PENYESUAIAN CARD UNTUK FASILITAS ================== */
+
+ /* --- MODIFIKASI pada .card --- */
+ /* Kita hapus padding dan border-top dari .card asli
+    agar gambar bisa menempel sempurna di bagian atas. */
+ .facility-grid .card {
+     padding: 0; /* Hapus padding agar gambar bisa penuh */
+     border-top: none; /* Hapus border atas karena sudah ada gambar */
+     display: flex; /* Menggunakan flexbox untuk layout yang lebih baik */
+     flex-direction: column;
+ }
+
+ /* --- BARU --- */
+ /* Wadah untuk gambar agar sudutnya bisa melengkung */
+ .card-image-container {
+     width: 100%;
+     aspect-ratio: 16 / 10; /* Menjaga rasio gambar agar seragam */
+     overflow: hidden; /* Penting untuk memotong gambar sesuai lengkungan */
+     border-top-left-radius: var(--border-radius);
+     border-top-right-radius: var(--border-radius);
+ }
+
+ /* --- BARU --- */
+ /* Styling untuk gambar di dalam card */
+ .card-image-container img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover; /* Membuat gambar mengisi wadah tanpa distorsi */
+     display: block;
+     transition: transform 0.3s ease;
+ }
+
+ /* --- BARU --- */
+ /* Efek zoom saat card di-hover */
+ /* .facility-grid .card:hover .card-image-container img {
+     transform: scale(1.05);
+ } */
+
+
+ /* --- BARU --- */
+ /* Wadah untuk konten teks di bawah gambar */
+ .card-content {
+     padding: 25px;
+     flex-grow: 1; /* Memastikan konten mengisi sisa ruang di card */
+     display: flex;
+     flex-direction: column;
+ }
+
+ /* --- MODIFIKASI pada .card h4 --- */
+ /* Pastikan judul tetap menempel di atas deskripsi */
+ .card-content h4 {
+     margin-bottom: 10px;
+ }
+
+ /* --- MODIFIKASI pada .card p --- */
+ /* Atur agar deskripsi bisa tumbuh mengisi ruang */
+ .card-content p {
+     flex-grow: 1;
+ }
